@@ -1,1 +1,15 @@
-00-introduction.md
+foreword.md
+about-the-authors.md
+acknowledgements.md
+introduction.md
+understanding-commits-in-git.md
+three-way-and-fast-forward-merges.md
+the-problem-with-basic-merging.md
+basic-rebasing.md
+interactive-rebasing.md
+reordering-commits.md
+squashing-commits-together.md
+autosquashing-commits.md
+splitting-up-existing-commits.md
+executing-programs-during-interactive-rebases.md
+generating-changelogs-with-clog.md
