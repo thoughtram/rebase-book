@@ -89,3 +89,4 @@ In this post, we explored what Git's long revision numbers are about and how the
 Please note that I simplified some parts intentionally in order to reduce the noise and make the essence easier to grasp. If you like to dig deeper, I highly recommend to read up on the [Git's internals](http://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
 
 This post is part of a future blog series about Git internals and will also be part of our book [rebase - the complete guide on rebasing in git](https://leanpub.com/rebase-the-complete-guide-on-rebasing-in-git).
+
