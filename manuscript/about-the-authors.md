@@ -1,7 +1,8 @@
 # About the authors
 
-
+{width=50%,float=left}
 ![](images/author_christoph.jpg)
+
 ## Christoph Burgdorf
 
 Christoph is a software engineer and began with programming at the age of 10 with BASIC but has since moved on to become proficient in various different programming languages and technologies.
@@ -10,7 +11,9 @@ He has contributed to many projects, including [AngularJS](http://angularjs.org)
 
 You can also find and follow him on [GitHub](http://github.com/cburgdorf) and [Twitter](http://twitter.com/cburgdorf).
 
+{width=50%,float=left}
 ![](images/author_pascal.jpg)
+
 ## Pascal Precht
 
 Pascal is a front-end engineer with a love for semantic markup and evolving technologies in the open web. He loves contributing to open source and is the creator of the popular [angular-translate](http://angular-translate.github.io) module.
