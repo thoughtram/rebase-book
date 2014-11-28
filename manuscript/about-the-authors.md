@@ -1,6 +1,6 @@
 # About the authors
 
-{width=50%,float=left}
+{width=30%}
 ![](images/author_christoph.jpg)
 
 ## Christoph Burgdorf
@@ -11,7 +11,7 @@ He has contributed to many projects, including [AngularJS](http://angularjs.org)
 
 You can also find and follow him on [GitHub](http://github.com/cburgdorf) and [Twitter](http://twitter.com/cburgdorf).
 
-{width=50%,float=left}
+{width=30%}
 ![](images/author_pascal.jpg)
 
 ## Pascal Precht
