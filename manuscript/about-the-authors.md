@@ -1,7 +1,5 @@
 # About the authors
 
-{width=30%}
-![](images/author_christoph.jpg)
 
 ## Christoph Burgdorf
 
@@ -10,9 +8,6 @@ Christoph is a software engineer and began with programming at the age of 10 wit
 He has contributed to many projects, including [AngularJS](http://angularjs.org), jquery-ui, [TodoMVC](http://todomvc.com) and the banshee media player and is also the creator of the [nickel.rs](http://nickel.rs) framework. When he's not evangelizing git, he likes to travel the world with his bicycle.
 
 You can also find and follow him on [GitHub](http://github.com/cburgdorf) and [Twitter](http://twitter.com/cburgdorf).
-
-{width=30%}
-![](images/author_pascal.jpg)
 
 ## Pascal Precht
 
