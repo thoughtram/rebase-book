@@ -8,7 +8,7 @@ This book is about Git's most powerful feature: Rebasing. If you now think: *"I 
 
 ## Who This Book is For?
 
-This book is intended as a guide for people already familiar with Git. While a deep understanding of Git isn't necessary to use this book, you would leave out many more basic features of Git if this is your first Git book. If you don't feel familiar with the basics of Git we recommend reading the free [Pro Git Book](http://git-scm.com/book) before you read on.
+This book is intended as a guide for people already familiar with Git. While a deep understanding of Git isn't necessary to use this book, you would leave out many more basic features of Git, if this is your first Git book. If you don't feel familiar with the basics of Git we recommend reading the free [Pro Git Book](http://git-scm.com/book) before you read on.
 
 ## Overview
 
