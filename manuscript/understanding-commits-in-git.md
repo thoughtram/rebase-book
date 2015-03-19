@@ -25,7 +25,7 @@ Running the commands above in a dedicated terminal creates a new folder `app`, i
 
         adds foo
 
-There it is. We have a commit hash that says `bf469262a00d0c7d121acb6e3b4640eea5055723`. So what is it that causes these long hashes that don't seem to mean anything for us humans? And why do we need them at all and not just use revision names such as `r4711` or `r4712`?
+There it is. We have a commit hash that says `f4f78b319c308600eab015a5d6529add21660dc1`. So what is it that causes these long hashes that don't seem to mean anything for us humans? And why do we need them at all and not just use revision names such as `r4711` or `r4712`?
 
 It turns out that using 40 bytes long hashes is actually pretty clever. Of course, they are hard to read and even harder to remember, but they were also not necessarily made for humans in the first place. These hashes are used by Git to make the data we are working with **addressable** on a file system level. Not only that, but they also ensure our data is cryptographically secure. Git comes with integrity by default.
 
