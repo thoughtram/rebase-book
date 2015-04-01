@@ -12,7 +12,7 @@ This book is intended as a guide for people who are already familiar with Git. W
 
 ## Overview
 
-**Chapter 1: Understanding Commits in Git** gives you a quick introduction on what commits in Git actually are and what their anatomy looks like. This is knowledge is fundamental to understanding merging and rebasing in future chapters.
+**Chapter 1: Understanding Commits in Git** gives you a quick introduction on what commits in Git actually are and what their anatomy looks like. This knowledge is fundamental to understanding merging and rebasing in future chapters.
 
 **Chapter 2: Three-way and Fast-Forward Merges** details what merges are and what types of merges exist.
 
