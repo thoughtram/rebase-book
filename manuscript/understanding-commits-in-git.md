@@ -8,7 +8,7 @@ The first thing we are going to do is to take a closer look at the anatomy of a 
 
 ## What's up with those long revision names?
 
-One of the first things people notice when they switch from other version control systems to Git, is that revisions use hard to remember 40 character long hashes. They are pretty much impossible to read and also look quite cryptic, especially when they appear the very first time on the screen. Let's generate one of those hashes real quick, just to make sure we're all on the same page.
+One of the first things people notice when they switch from other version control systems to Git, is that revisions use hard to remember 40 characters long hashes. They are pretty much impossible to read and also look quite cryptic, especially when they appear the very first time on the screen. Let's generate one of those hashes real quick, just to make sure we're all on the same page.
 
 {title="Creating a first commit",linenos=off,lang="sh"}
     $ mkdir app && cd app && git init
@@ -54,7 +54,7 @@ Just hashing a string is, of course, not enough. As we know, the same string alw
 
 Git needs more data to make each commit actually unique. Let's take a look at a very abstract presentation of what the implementation of a `git commit` command looks like and iterate on it until we have a strong understanding of the internal representation. In principle it looks like this in pseudo code:
 
-{title="Pseudo code representation of Gits commit command",linenos=off,lang="sh"}
+{title="Pseudo code representation of Git's commit command",linenos=off,lang="sh"}
     sha1(
         metaData
             commitMessage,
@@ -94,7 +94,7 @@ When I said `hashOfWorkingDirectory` I made a bit of an oversimplification. Yes 
 
 This project structure is a Git repository, which is why we can see a `.git` folder. Beside that it has an `assets` folder where we can find media files and stylesheets. And last but not least, we have a `app.js` file next to the `assets` folder, that probably has our actual application logic.
 
-Now let's take a look what Git's representation of this working directory looks like:
+Now let's take a look at what Git's representation of this working directory looks like:
 
 ![Git's representation of sample working directory](images/git_tree.png)
 
@@ -112,7 +112,7 @@ Wow, that was complicated, wasn't it? Don't be scared by all these hashes, what 
 
 ## The commit object
 
-Now that we have a basic idea how Git represents its data in blobs and trees, we can go back to our commit object from above and fill it with life. Let's assume we freshly started the repository and this is our initial commit. What follows is again pseudo code to demonstrate what exactly is used to get to the commit hash.
+Now that we have a basic idea of how Git represents its data in blobs and trees, we can go back to our commit object from above and fill it with life. Let's assume we freshly started the repository and this is our initial commit. What follows is again pseudo code to demonstrate what exactly is used to get to the commit hash.
 
 {title="Pseudo commit command",linenos=off,lang="sh"}
     sha1(
