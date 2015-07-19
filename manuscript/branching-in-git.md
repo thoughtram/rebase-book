@@ -39,7 +39,7 @@ Opening `.git/HEAD` shows us that `HEAD` now points at `feature`, which points a
 
 This is why branches in Git are so super cheap. It doesn't copy the whole working directoy in a new branch folder. Git really just creates a file with the branch name containing the commit SHA to point at and a `HEAD` file that points at the currently checked out branch. If we switch to another branch, what happens is that Git changes the content of `HEAD`. No more black magic involved.
 
-## Detached HEAD
+## Follow the HEAD Pointer
 
 But what happens if we now create or modify some files and make another commit? Let's find out.
 
