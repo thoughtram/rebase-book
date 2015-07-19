@@ -136,4 +136,4 @@ Congratulations! We now know how Git handles the data that we commit to our repo
 
 Please note that we simplified some parts intentionally in order to reduce the noise and make the essence easier to grasp. If you like to dig deeper, we highly recommend to read up on the Git's internals in the [Git book](http://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
 
-In the next chapter we take a look at merges and get a basic understanding of what three-way and fast-forward merges are.
+In the next chapter we take a look at branches and how we can use them to increase productivity, as well as flexibility.
