@@ -1,40 +1,45 @@
-{mainmatter}
+# Branching in Git
 
-In this chapter we will take a deep dive into Git branches. We'll see how simple yet powerful the concept of branching in Git is. 
+In the last chapter we learned the anatomy of a commit in Git. In order to understand what a rebase is, we first need to learn about the concepts of branches in Git. This chapter discusses how branches in Git are technically represented and how simple and yet powerful they are.
 
-In the last chapter we took a detailed look on the anatomy of a Git commit. Now that we know how commits work in Git let's expand on our knowledge and understand branches. It's important to first grok the concept of branching in Git before we go into merging.
+## Understanding Branches
 
-## Starting with a simple scenario
+When we create commit objects, each commit usually points to one or more parent commits. With each commit pointing to it's parent commit, Git is not only able to track the entire project history, it can also reconstruct any state of the project that happened during the development with the help of branches. A branch basically tells us, in which development branch we're currently working in, since there can be many, but technically, it's just a pointer at a commit.
 
-Let's start by looking at a simple commit history.
+To get a better picture of this, let's take a look at the following simple commit history.
 
 ![A simple commit history](/images/git-branching-commits-abstract-2.svg)
 
-Let's assume our entire repository history is made up only from those three commits. There's a pointer called `master` pointing at commit `a5c3eb`. That's all what branches are: they are movable pointers. Let's create a branch called `feature`.
+The figure shows a very abstract representation of a commit history that has just three commits with, of course, each commit having it's own SHA-1 hash. Let's assume our entire repository history is made up only from those three commits. There's a pointer called `master` pointing at commit `a5c3eb`. Guess what, this pointer is a branch. The `master` branch is the default branch that Git already created for us when we initialized our repository.
 
-{% highlight ruby %}
-git branch feature
-{% endhighlight %}
+As mentioned earlier, a branch is really just a pointer pointing at a specific commit. In fact, we can inspect the file system and verify exactly that. Simply open the file `.git/refs/heads/master` and take a look at it's contents. Don't worry about the file structure for now. We'll talk about this part of the `.git` folder later. We can see that the file really just contains a SHA that points at a commit object in our repository. Another interesting fact: A branch is a movable pointer. Whenever we make a new commit, the branch pointer points at that particular commit. Let's learn how we can create new branches.
+
+## Creating Branches
+
+Creating a branch in Git is pretty straight forward and very easy at the same time. All we need to do is to execute `git branch <branch-name>`. Let's create a branch called `feature` and see what actually happens. After running `git branch feature`, this is what our commit graph then looks like:
 
 ![Creating another branch](/images/git-branching-new-branch.svg)
 
-Seen that? We just created another pointer called `feature` pointing at the exact same commit. Basically, all Git does it creates a file called `feature` with the contents being a 40 char string, the SHA-1 revision name of the commit.
+Seen that? We just created another pointer called `feature` pointing at the exact same commit. Basically, all Git does, it creates a file called `feature` in `.git/refs/heads` with the contents of the SHA-1 hash of the commit. Now that we have two different branches pointing at the same commit, how does Git know which branch is currently checked out? This is where the `HEAD` pointer comes into play.
 
-But wait! Now that we have two different branches pointing to the same commit. How does Git know which branch is currently checked out? This is where the `HEAD` pointer comes into play!
+## Understanding HEAD
+
+If you're familiar with other version control systems, you probably have a different understand of what the `HEAD` is. In Git, `HEAD` is a special pointer that simply points to at the currently checked out branch or commit. Coming back to our example, we're currently working in the `master` branch, which is why `HEAD` points at `master`.
 
 ![Understanding HEAD](/images/git-branching-head-pointer.svg)
 
-The `HEAD` is a special pointer that simply points to the currently checked out *branch* or *commit*. And again, it's a simple file inside the `.git` folder called `HEAD` which in our case currently contains the string *master*.
+And again, it's just a simple file inside the `.git` folder. The file called `HEAD` contains a string of the branch name that is currently checked out. We can verify it by simply switching to our `feature` branch that we've just created by running the following command.
 
-Ok then, what happens if we switch to our feature branch?
+{title="Switching to another branch",linenos=off,lang="sh"}
+  git checkout feature
 
-{% highlight ruby %}
-git checkout feature
-{% endhighlight %}
+Opening `.git/HEAD` shows us that `HEAD` now points at `feature`, which points at our latest commit. Here's a graphical representation of what happened.
 
-![Switching branches](/images/git-branching-head-pointer-2.svg)
+![HEAD pointing at feature branch](/images/git-branching-head-pointer-2.svg)
 
-Exactly, all what happened is that `HEAD` is now pointing to `feature` instead of `master`. Switching between `master` and `feature` at this point boils down to Git replacing the string *master* with *feature* in the HEAD file. Super cheap!
+This is why branches in Git are so super cheap. It doesn't copy the whole working directoy in a new branch folder. Git really just creates a file with the branch name containing the commit SHA to point at and a `HEAD` file that points at the currently checked out branch. If we switch to another branch, it what happens is that Git changes the content of `HEAD`. No more black magic involved.
+
+## Detached HEAD
 
 But what happens if we now create or modify some files and make another commit? Let's find out.
 
