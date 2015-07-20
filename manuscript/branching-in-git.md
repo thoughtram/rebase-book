@@ -39,7 +39,7 @@ Opening `.git/HEAD` shows us that `HEAD` now points at `feature`, which points a
 
 ![HEAD pointing at feature branch](/images/git-branching-head-pointer-2.svg)
 
-This is why branches in Git are so super cheap. It doesn't copy the whole working directory in a new branch folder. Git really just creates a file with the branch name containing the commit SHA to point at and a `HEAD` file that points at the currently checked out branch. If we switch to another branch, all what happens is that Git changes the content of `HEAD`. No more black magic involved.
+This is why branches in Git are so super cheap. It doesn't copy the whole working directory in a new branch folder. Git really just creates a file with the branch name containing the commit SHA to point at and a `HEAD` file that points at the currently checked out branch. If we switch to another branch, what happens is that Git changes the content of `HEAD`. No more black magic involved.
 
 We mentioned earlier, that a branch is in fact a movable pointer. By "movable" we mean that it automatically updates itself and points at the next commit, in case we're making one. To make this a bit more clear, let's assume we made yet another commit in our `feature` branch. Here's what our graph will them look like:
 
